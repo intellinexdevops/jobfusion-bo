@@ -17,7 +17,7 @@ const sidebarroutes = [
     icon: Briefcase,
   },
   {
-    title: "Settings",
+    title: "Plans",
     url: "/settings",
     icon: Settings,
   },
