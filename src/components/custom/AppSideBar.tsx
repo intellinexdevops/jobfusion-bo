@@ -131,6 +131,7 @@ export function AppSidebar() {
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
 
+
                             <SidebarMenuItem className={pathname === "/plan" ? "c_active" : ""}>
                                 <SidebarMenuButton asChild>
                                     <Link href={"/plan"} >
@@ -206,7 +207,7 @@ export function AppSidebar() {
                                                     <Link href={"/workspace"} >
                                                         <Image
                                                             src={pathname === "/workspace" ? "/assets/_vector.svg" : "/assets/vector.svg"}
-                                                            alt="Job type"
+                                                            alt="Workspace"
                                                             width={14}
                                                             height={14}
                                                             loading="lazy"
@@ -221,7 +222,7 @@ export function AppSidebar() {
                                                     <Link href={"/skill"} >
                                                         <Image
                                                             src={pathname === "/skill" ? "/assets/_vector.svg" : "/assets/vector.svg"}
-                                                            alt="Job type"
+                                                            alt="skill"
                                                             width={14}
                                                             height={14}
                                                             loading="lazy"
