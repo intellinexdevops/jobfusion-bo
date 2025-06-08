@@ -21,7 +21,7 @@ const UserMainPage = () => {
                         <TabsTrigger value="oldest">Oldest</TabsTrigger>
                     </TabsList>
                     <TabsContent value="all">
-                        <Table>
+                        <Table title='User List' buttonText='New User' createPath='/user/create' >
                             <div>
                                 User Alll
                             </div>

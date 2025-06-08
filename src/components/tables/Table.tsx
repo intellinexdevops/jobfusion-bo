@@ -2,14 +2,23 @@ import React from 'react'
 import TableHeaderNav from './TableHeaderNav'
 import TableFooter from './TableFooter'
 
+
+interface ITable {
+    children: React.ReactNode;
+    title?: string;
+    buttonText?: string;
+    createPath?: string;
+}
+
 const Table = ({
-    children
-}: {
-    children: React.ReactNode
-}) => {
+    children,
+    buttonText,
+    createPath,
+    title
+}: ITable) => {
     return (
         <div className='bg-white rounded-xl'>
-            <TableHeaderNav />
+            <TableHeaderNav buttonText={buttonText} createPath={createPath} title={title} />
             {children}
             <TableFooter />
         </div>
