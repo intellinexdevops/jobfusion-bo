@@ -1,7 +1,6 @@
+import UserMainPage from '@/components/pages/UserMainPage'
 import React from 'react'
 
 export default function UserPage() {
-    return (
-        <div>UserPage</div>
-    )
+    return <UserMainPage />;
 }

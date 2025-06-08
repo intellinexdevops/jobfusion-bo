@@ -3,7 +3,7 @@ import { AppSidebar } from "@/components/custom/AppSideBar"
 import HeaderComponent from "@/components/custom/HeaderComponent"
 import Breadcrumb from "@/components/custom/Breadcrumb"
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children, modal }: { children: React.ReactNode, modal: React.ReactNode, }) {
     return (
         <SidebarProvider>
             <AppSidebar />
@@ -11,6 +11,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <HeaderComponent />
                 <Breadcrumb />
                 {children}
+                {modal}
             </main>
         </SidebarProvider>
     )

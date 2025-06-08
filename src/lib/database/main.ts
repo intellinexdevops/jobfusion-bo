@@ -1,13 +1,51 @@
 import mongoose from "mongoose";
 
-const MONGO_URI_MAIN = process.env.MONGO_URI_MAIN as string;
+const MONGOdb_URI_MAIN = process.env.NEXT_PUBLIC_MONGODB_URI_MAIN as string;
 
-if (!MONGO_URI_MAIN) {
-  throw new Error("Please define the MONGO_URI_MAIN in your .env.local");
+if (!MONGOdb_URI_MAIN) {
+  throw new Error("Please define the MONGOdb_URI_MAIN in your .env.local");
 }
 
-async function connect() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/test");
+/**
+ * Global is used here to maintain a cached connection across hot reloads
+ * in development. This prevents connections growing exponentially
+ * during API Route usage.
+ */
+
+declare global {
+  // eslint-disable-next-line no-var, @typescript-eslint/no-explicit-any
+  var mongoose: any;
 }
 
-connect().then((error) => console.error(error));
+let cached = global.mongoose;
+
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
+
+async function dbConnection() {
+  if (cached.conn) {
+    return cached.conn;
+  }
+  if (!cached.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
+
+    cached.promise = mongoose
+      .connect(MONGOdb_URI_MAIN, opts)
+      .then((mongoose) => {
+        return mongoose;
+      });
+  }
+  try {
+    cached.conn = await cached.promise;
+  } catch (e) {
+    cached.promise = null;
+    throw e;
+  }
+
+  return cached.conn;
+}
+
+export default dbConnection;
