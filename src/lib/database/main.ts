@@ -1,9 +1,9 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const MONGOdb_URI_MAIN = process.env.NEXT_PUBLIC_MONGODB_URI_MAIN as string;
 
 if (!MONGOdb_URI_MAIN) {
-  throw new Error("Please define the MONGOdb_URI_MAIN in your .env.local");
+  throw new Error('Please define the MONGOdb_URI_MAIN in your .env.local');
 }
 
 /**
@@ -32,11 +32,9 @@ async function dbConnection() {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose
-      .connect(MONGOdb_URI_MAIN, opts)
-      .then((mongoose) => {
-        return mongoose;
-      });
+    cached.promise = mongoose.connect(MONGOdb_URI_MAIN, opts).then((mongoose) => {
+      return mongoose;
+    });
   }
   try {
     cached.conn = await cached.promise;

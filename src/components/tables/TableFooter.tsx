@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const TableFooter = () => {
-    return (
-        <div>TableFooter</div>
-    )
-}
+  return <div>TableFooter</div>;
+};
 
-export default TableFooter
+export default TableFooter;

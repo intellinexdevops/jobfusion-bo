@@ -17,8 +17,8 @@ declare global {
   var mongoose: any;
 }
 
-import mongoose from "mongoose";
-import config from "../config";
+import mongoose from 'mongoose';
+import config from '../config';
 
 const MONGODB_URI = config.NEXT_PUBLIC_CONFIGURATION_MONGODB_URI;
 
@@ -41,7 +41,7 @@ async function connectDB(): Promise<typeof mongoose> {
 
   if (!cached.promise) {
     cached.promise = mongoose.connect(MONGODB_URI!).then((mongoose) => {
-      console.log("Connected to MongoDB");
+      console.log('Connected to MongoDB');
       return mongoose;
     });
   }
