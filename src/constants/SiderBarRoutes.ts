@@ -1,24 +1,24 @@
-import { Settings, User2, Building2, Briefcase } from "lucide-react";
+import { Settings, User2, Building2, Briefcase } from 'lucide-react';
 
 const sidebarroutes = [
   {
-    title: "Users",
-    url: "/user",
+    title: 'Users',
+    url: '/user',
     icon: User2,
   },
   {
-    title: "Pages",
-    url: "/page",
+    title: 'Pages',
+    url: '/page',
     icon: Building2,
   },
   {
-    title: "Jobs",
-    url: "/job",
+    title: 'Jobs',
+    url: '/job',
     icon: Briefcase,
   },
   {
-    title: "Settings",
-    url: "/settings",
+    title: 'Plans',
+    url: '/settings',
     icon: Settings,
   },
 ];
