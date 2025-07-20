@@ -1,14 +1,7 @@
-import Link from 'next/link'
-import React from 'react'
+import React from 'react';
 
 const HomeMainPage = () => {
-    return (
-        <div>
-            <Link href="/signin" >
-                Login
-            </Link>
-        </div>
-    )
-}
+  return <div></div>;
+};
 
-export default HomeMainPage
+export default HomeMainPage;

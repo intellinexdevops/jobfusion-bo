@@ -1,6 +1,6 @@
-import SignInMainPage from '@/components/pages/SignInMainPage'
-import React from 'react'
+import SignInMainPage from '@/components/pages/SignInMainPage';
+import React from 'react';
 
 export default function SignIn() {
-    return <SignInMainPage />
+  return <SignInMainPage />;
 }
